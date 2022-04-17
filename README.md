@@ -1,15 +1,18 @@
 # SKIPJACK
 Pure Rust implementation of the [SKIPJACK](https://csrc.nist.gov/csrc/media/projects/cryptographic-algorithm-validation-program/documents/skipjack/skipjack.pdf) cipher.
 
-# <span style="color:red">Security Warning</span>
+# SECURITY WARNING
 SKIPJACK is a broken and outdated cipher.
 This implementation should be used for educational purposes ONLY.
 It should NEVER be used in a production environment and the author WILL NOT take on responsibility for damage caused by irresponsible usage of this library!
+
 USE AT YOUR OWN RISK!
 
 # Implementation
 This crate implements the low-level cipher functions of the SkipJack cipher.
-It supports a better optimized encryption/decryption of 64-bit blocks than the approach specified by the original SkipJack specification. There are benchmarks available in `/benches/`.
+It supports a better optimized encryption/decryption of 64-bit blocks than the approach specified by the original SkipJack specification. 
+
+There are benchmarks available in `/benches/`.
 
 # Examples
 ```rust
