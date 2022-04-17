@@ -1,0 +1,45 @@
+[package]
+name = "skipjack_rs"
+version = "0.1.0"
+edition = "2021"
+description = "Pure Rust software implementation of the SKIPJACK codebook encryptor/decryptor Algorithm"
+authors = ["Schmid7k"]
+licane = "MIT OR Apache-2.0"
+readme = "README.md"
+documentation = "https://docs.rs/skipjack_rs"
+repository = "https://github.com/Schmid7k/skipjack_rs"
+keywords = ["crypto", "skipjack", "block-cipher", "educational"]
+categories = ["cryptography", "no-std"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dev-dependencies]
+criterion = "0.3.5"
+criterion-cycles-per-byte = "0.1.2"
+
+[dependencies]
+cipher = "0.4.3"
+generic-array = "0.14.5"
+
+[profile.bench]
+opt-level = 3
+codegen-units = 1
+debug = false
+debug-assertions = false
+lto = "fat"
+rpath = false
+incremental = false
+
+[[bench]]
+name = "skipjack_encrypt"
+path = "benches/encrypt.rs"
+harness = false
+
+[[bench]]
+name = "skipjack_decrypt"
+path = "benches/decrypt.rs"
+harness = false
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
