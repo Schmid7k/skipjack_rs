@@ -28,3 +28,12 @@ let mut buf = [0x2587, 0xcae2, 0x7a12, 0xd300].into();
 skipjack.decrypt(&mut buf);
 assert_eq!(buf, [0x3322, 0x1100, 0xddcc, 0xbbaa].into());
 ```
+
+# Licenses
+
+This crate is licensed under either of
+
+- [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+- [MIT license](http://opensource.org/licenses/MIT)
+
+at your choice.
